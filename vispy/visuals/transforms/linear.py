@@ -403,7 +403,7 @@ class MatrixTransform(BaseTransform):
     @property
     def inv_matrix(self):
         if self._inv_matrix is None:
-            self._inv_matrix = np.linalg.inv(self.matrix)
+            self._inv_matrix = np.linalg.pinv(self.matrix)
         return self._inv_matrix
 
     @arg_to_vec4
